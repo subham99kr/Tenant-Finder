@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "362380313742",
+    "project_id": "tenantfinder-90f27",
+    "storage_bucket": "tenantfinder-90f27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362380313742:android:3ddf180101a32c773cb5df",
+        "android_client_info": {
+          "package_name": "com.example.tenantfinder_9204"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362380313742-62keai1ocljrkv1e4esq9c5nslke14ga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ9J5oz6ot_BQ9bH_skFJm7u_nXdu8Z3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362380313742-62keai1ocljrkv1e4esq9c5nslke14ga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
