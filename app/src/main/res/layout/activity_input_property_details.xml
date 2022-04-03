@@ -8,7 +8,7 @@
     tools:context=".InputPropertyDetails">
 
     <EditText
-        android:id="@+id/OwnerName"
+        android:id="@+id/ettName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -33,7 +33,7 @@
 
 
     <EditText
-        android:id="@+id/MobileNumberO"
+        android:id="@+id/ettPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -47,13 +47,13 @@
         android:inputType="number"
         android:minHeight="48dp"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/OwnerName"
+        app:layout_constraintEnd_toEndOf="@+id/ettName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/OwnerName"
-        app:layout_constraintTop_toBottomOf="@+id/OwnerName" />
+        app:layout_constraintStart_toStartOf="@+id/ettName"
+        app:layout_constraintTop_toBottomOf="@+id/ettName" />
 
     <EditText
-        android:id="@+id/Address"
+        android:id="@+id/ettAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -67,10 +67,10 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/MobileNumberO"
+        app:layout_constraintEnd_toEndOf="@+id/ettPhone"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/MobileNumberO"
-        app:layout_constraintTop_toBottomOf="@+id/MobileNumberO" />
+        app:layout_constraintStart_toStartOf="@+id/ettPhone"
+        app:layout_constraintTop_toBottomOf="@+id/ettPhone" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -80,13 +80,13 @@
         android:text="@string/add"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/EnterDetails"
-        app:layout_constraintStart_toStartOf="@+id/EnterDetails"
-        app:layout_constraintTop_toBottomOf="@+id/EnterDetails"
+        app:layout_constraintEnd_toEndOf="@+id/ettDetails"
+        app:layout_constraintStart_toStartOf="@+id/ettDetails"
+        app:layout_constraintTop_toBottomOf="@+id/ettDetails"
         app:layout_constraintVertical_bias="0.212" />
 
     <EditText
-        android:id="@+id/EnterDetails"
+        android:id="@+id/ettDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -98,8 +98,8 @@
         android:hint="@string/enter_details"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/Address"
+        app:layout_constraintEnd_toEndOf="@+id/ettAddress"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/Address"
-        app:layout_constraintTop_toBottomOf="@+id/Address" />
+        app:layout_constraintStart_toStartOf="@+id/ettAddress"
+        app:layout_constraintTop_toBottomOf="@+id/ettAddress" />
 </androidx.constraintlayout.widget.ConstraintLayout>
