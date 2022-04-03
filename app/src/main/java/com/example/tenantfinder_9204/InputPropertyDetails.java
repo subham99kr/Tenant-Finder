@@ -21,7 +21,7 @@ public class InputPropertyDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_tenant);
+        setContentView(R.layout.activity_input_property_details);
         ettName =  findViewById(R.id.ettName);
         ettAddress =  findViewById(R.id.ettAddress);
         ettPhone = findViewById(R.id.ettPhone);
