@@ -29,4 +29,5 @@
     <string name="your_name">Your name</string>
     <string name="login">Login</string>
     <string name="google">Google</string>
+    <string name="login_using_google">Login using Google</string>
 </resources>

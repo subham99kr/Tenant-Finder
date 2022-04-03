@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
@@ -28,14 +27,11 @@ public class Input_Tenant extends AppCompatActivity {
         DetailsT = findViewById(R.id.DetailsTenant);
         saveT = findViewById(R.id.btnSave);
 
-        saveT.setOnClickListener ( new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference();
+        saveT.setOnClickListener (view -> {
+            rootNode = FirebaseDatabase.getInstance();
+            reference = rootNode.getReference();
 
 
-            }
         });
 
     }
