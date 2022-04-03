@@ -41,7 +41,7 @@ public class Register extends AppCompatActivity {
 
         btnRegister.setOnClickListener(view -> createUser());
 
-        tvLoginHere.setOnClickListener(view -> startActivity(new Intent(Register.this, MainActivity.class)));
+        tvLoginHere.setOnClickListener(view -> startActivity(new Intent(Register.this, LoginActivity.class)));
     }
 
     private void createUser(){
@@ -58,7 +58,7 @@ public class Register extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
                     Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Register.this, MainActivity.class));
+                    startActivity(new Intent(Register.this, LoginActivity.class));
                 }else{
                     Toast.makeText(Register.this, "Registration Error: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                 }
