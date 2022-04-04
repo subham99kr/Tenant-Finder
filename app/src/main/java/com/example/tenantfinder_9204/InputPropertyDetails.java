@@ -37,8 +37,8 @@ public class InputPropertyDetails extends AppCompatActivity {
         String phone = ettPhone.getText().toString();
         String details = ettDetails.getText().toString();
         String address = ettAddress.getText().toString();
-        OwnerDB owners  = new OwnerDB(name,phone,details,address);
 
+        OwnerDB owners  = new OwnerDB(name,phone,details,address);
 
         //use- so that inputs doesn't gets overwritten.
         DataBaseTO.push().setValue(owners);
