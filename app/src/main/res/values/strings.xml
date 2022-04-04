@@ -29,6 +29,8 @@
     <string name="your_name">Your name</string>
     <string name="login">Login</string>
     <string name="google">Google</string>
-    <string name="login_using_google">Login using Google</string>
-    <string name="availaible_properties_for_rent">Availaible properties for rent</string>
+    <string name="available_properties_for_rent">Available properties for rent</string>
+    <string name="subham_kumar">Subham Kumar</string>
+    <string name="_0909875488">0909875488</string>
+    <string name="jasper_a_430">Jasper A 430</string>
 </resources>
