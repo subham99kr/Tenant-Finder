@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,10 +28,7 @@ public class Input_Tenant extends AppCompatActivity {
         btnInsertData = findViewById(R.id.btnInsertData);
 
         DataBaseTO = FirebaseDatabase.getInstance().getReference().child("TENANTS");
-        btnInsertData.setOnClickListener (view -> {
-            insertTenantData();
-
-        });
+        btnInsertData.setOnClickListener (view -> insertTenantData());
 
     }
     private void insertTenantData(){
