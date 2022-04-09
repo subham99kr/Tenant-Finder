@@ -14,7 +14,7 @@ public class Owner extends AppCompatActivity {
         setContentView(R.layout.activity_owner);
     }
     public void viewTenants(View view){
-        Intent intent = new Intent(this, TenantsAvailaible.class);
+        Intent intent = new Intent(this, TenantsAvailable.class);
         startActivity(intent);}
     public void addProperty(View view){
         Intent intent = new Intent(this, InputPropertyDetails.class);

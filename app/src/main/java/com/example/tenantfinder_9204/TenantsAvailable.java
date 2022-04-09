@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class TenantsAvailaible extends AppCompatActivity {
+public class TenantsAvailable extends AppCompatActivity {
 
    RecyclerView recyclerView;
    DatabaseReference database;
@@ -29,7 +29,7 @@ public class TenantsAvailaible extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tenants_availaible);
 
-        recyclerView = findViewById(R.id.tenantsAvail);
+        recyclerView = findViewById(R.id.recyclerViewT);
         database= FirebaseDatabase.getInstance().getReference("TENANTS");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -38,7 +38,7 @@ public class TenantsAvailaible extends AppCompatActivity {
         adapterTDB = new AdapterTDB(this,list);
         recyclerView.setAdapter(adapterTDB);
 
-        //call back method
+
         database.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override

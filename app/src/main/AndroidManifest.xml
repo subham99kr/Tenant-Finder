@@ -16,7 +16,7 @@
             android:name=".ShowProperties"
             android:exported="false" />
         <activity
-            android:name=".TenantsAvailaible"
+            android:name=".TenantsAvailable"
             android:exported="false" />
         <activity
             android:name=".Input_Tenant"
