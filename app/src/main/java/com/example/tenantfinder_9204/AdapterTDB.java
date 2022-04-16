@@ -4,10 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -30,6 +33,7 @@ public class AdapterTDB extends RecyclerView.Adapter<AdapterTDB.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        Glide.with(context).load(list.get(position).getImageUrl()).circleCrop().into(holder.imageView);
         TenantsRDB tenantsRDB = list.get(position);
         holder.name.setText(tenantsRDB.getName());
         holder.phone.setText(tenantsRDB.getPhone());
@@ -44,6 +48,7 @@ public class AdapterTDB extends RecyclerView.Adapter<AdapterTDB.MyViewHolder> {
     public static  class  MyViewHolder extends  RecyclerView.ViewHolder{
 
         TextView name , phone, details;
+        ImageView imageView;
 
 
 
@@ -53,6 +58,7 @@ public class AdapterTDB extends RecyclerView.Adapter<AdapterTDB.MyViewHolder> {
             name=itemView.findViewById(R.id.nameT);
             phone=itemView.findViewById(R.id.phoneT);
             details=itemView.findViewById(R.id.detailsT);
+            imageView=itemView.findViewById(R.id.imageViewT);
         }
     }
 }

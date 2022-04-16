@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class ShowProperties extends AppCompatActivity {
 
-    RecyclerView recyclerView;
+    RecyclerView recyclerViewO;
     DatabaseReference database;
     AdapterODB adapterODB;
     ArrayList<OwnersRDB> list;
@@ -28,14 +28,14 @@ public class ShowProperties extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_properties);
 
-        recyclerView = findViewById(R.id.recyclerViewT);
+        recyclerViewO = findViewById(R.id.recyclerViewO);
         database= FirebaseDatabase.getInstance().getReference("OWNERS");
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewO.setHasFixedSize(true);
+        recyclerViewO.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
         adapterODB = new AdapterODB(this,list);
-        recyclerView.setAdapter(adapterODB);
+        recyclerViewO.setAdapter(adapterODB);
 
 
         database.addValueEventListener(new ValueEventListener() {

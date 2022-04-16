@@ -1,7 +1,7 @@
 package com.example.tenantfinder_9204;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
@@ -15,7 +15,9 @@ public class InputPropertyDetails extends AppCompatActivity {
     EditText ettName , ettPhone , ettDetails , ettAddress ;
     Button btnAdd;
 
-    DatabaseReference DataBaseTO;
+
+    DatabaseReference DataBaseO;
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -28,9 +30,9 @@ public class InputPropertyDetails extends AppCompatActivity {
         ettDetails = findViewById(R.id.ettDetails);
         btnAdd = findViewById(R.id.btnAdd);
 
-        DataBaseTO = FirebaseDatabase.getInstance().getReference().child("OWNERS");
-        btnAdd.setOnClickListener (view -> insertPropertyData());
 
+        DataBaseO = FirebaseDatabase.getInstance().getReference().child("OWNERS");
+        btnAdd.setOnClickListener (view -> insertPropertyData());
     }
     private void insertPropertyData(){
         String name = ettName.getText().toString();
@@ -40,8 +42,10 @@ public class InputPropertyDetails extends AppCompatActivity {
 
         OwnerDB owners  = new OwnerDB(name,phone,details,address);
 
-        //use- so that inputs doesn't gets overwritten.
-        DataBaseTO.push().setValue(owners);
+
+        DataBaseO.push().setValue(owners);
         Toast.makeText(InputPropertyDetails.this, "Data Inserted", Toast.LENGTH_SHORT).show();
     }
+
+
 }

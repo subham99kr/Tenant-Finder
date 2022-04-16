@@ -13,24 +13,24 @@ import java.util.ArrayList;
 
 public class AdapterODB extends RecyclerView.Adapter<AdapterODB.MyViewHolder> {
 
-    Context context;
-    ArrayList<OwnersRDB> list;
+    Context context1;
+    ArrayList<OwnersRDB> list1;
 
     public AdapterODB(Context context, ArrayList<OwnersRDB> list) {
-        this.context = context;
-        this.list = list;
+        this.context1 = context;
+        this.list1 = list;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.owners_ava_recycler,parent,false);
-        return new MyViewHolder(v);
+        View v1 = LayoutInflater.from(context1).inflate(R.layout.owners_ava_recycler,parent,false);
+        return new MyViewHolder(v1);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        OwnersRDB ownersRDB = list.get(position);
+        OwnersRDB ownersRDB = list1.get(position);
         holder.name.setText(ownersRDB.getName());
         holder.phone.setText(ownersRDB.getPhone());
         holder.details.setText(ownersRDB.getDetails());
@@ -39,12 +39,12 @@ public class AdapterODB extends RecyclerView.Adapter<AdapterODB.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return list1.size();
     }
 
     public static  class  MyViewHolder extends  RecyclerView.ViewHolder{
 
-        TextView name , phone, details, address;
+        TextView name , phone, details , address;
 
 
 
@@ -58,3 +58,4 @@ public class AdapterODB extends RecyclerView.Adapter<AdapterODB.MyViewHolder> {
         }
     }
 }
+
