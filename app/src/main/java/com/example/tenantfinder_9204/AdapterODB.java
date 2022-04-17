@@ -4,33 +4,37 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class AdapterODB extends RecyclerView.Adapter<AdapterODB.MyViewHolder> {
 
-    Context context1;
-    ArrayList<OwnersRDB> list1;
+    Context context;
+    ArrayList<OwnersRDB> list;
 
     public AdapterODB(Context context, ArrayList<OwnersRDB> list) {
-        this.context1 = context;
-        this.list1 = list;
+        this.context = context;
+        this.list = list;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v1 = LayoutInflater.from(context1).inflate(R.layout.owners_ava_recycler,parent,false);
-        return new MyViewHolder(v1);
+        View v = LayoutInflater.from(context).inflate(R.layout.owners_ava_recycler,parent,false);
+        return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        OwnersRDB ownersRDB = list1.get(position);
+        Glide.with(context).load(list.get(position).getImageUrl()).circleCrop().into(holder.imageView);
+        OwnersRDB ownersRDB = list.get(position);
         holder.name.setText(ownersRDB.getName());
         holder.phone.setText(ownersRDB.getPhone());
         holder.details.setText(ownersRDB.getDetails());
@@ -39,12 +43,13 @@ public class AdapterODB extends RecyclerView.Adapter<AdapterODB.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return list1.size();
+        return list.size();
     }
 
     public static  class  MyViewHolder extends  RecyclerView.ViewHolder{
 
         TextView name , phone, details , address;
+        ImageView imageView;
 
 
 
@@ -55,6 +60,7 @@ public class AdapterODB extends RecyclerView.Adapter<AdapterODB.MyViewHolder> {
             phone=itemView.findViewById(R.id.phoneO);
             details=itemView.findViewById(R.id.detailsO);
             address=itemView.findViewById(R.id.addressO);
+            imageView=itemView.findViewById(R.id.imageViewO);
         }
     }
 }

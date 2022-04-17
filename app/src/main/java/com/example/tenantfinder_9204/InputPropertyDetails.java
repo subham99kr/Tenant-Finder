@@ -12,8 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class InputPropertyDetails extends AppCompatActivity {
-    EditText ettName , ettPhone , ettDetails , ettAddress ;
-    Button btnAdd;
+   private EditText ettName , ettPhone , ettDetails , ettAddress ;
 
 
     DatabaseReference DataBaseO;
@@ -28,7 +27,7 @@ public class InputPropertyDetails extends AppCompatActivity {
         ettAddress =  findViewById(R.id.ettAddress);
         ettPhone = findViewById(R.id.ettPhone);
         ettDetails = findViewById(R.id.ettDetails);
-        btnAdd = findViewById(R.id.btnAdd);
+        Button btnAdd = findViewById(R.id.btnAdd);
 
 
         DataBaseO = FirebaseDatabase.getInstance().getReference().child("OWNERS");

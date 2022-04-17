@@ -18,34 +18,40 @@ import java.util.ArrayList;
 
 public class ShowProperties extends AppCompatActivity {
 
-    RecyclerView recyclerViewO;
-    DatabaseReference database;
+    DatabaseReference databaseO;
     AdapterODB adapterODB;
-    ArrayList<OwnersRDB> list;
+    ArrayList<OwnersRDB> listO;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_properties);
 
-        recyclerViewO = findViewById(R.id.recyclerViewO);
-        database= FirebaseDatabase.getInstance().getReference("OWNERS");
-        recyclerViewO.setHasFixedSize(true);
-        recyclerViewO.setLayoutManager(new LinearLayoutManager(this));
-
-        list = new ArrayList<>();
-        adapterODB = new AdapterODB(this,list);
-        recyclerViewO.setAdapter(adapterODB);
 
 
-        database.addValueEventListener(new ValueEventListener() {
+        RecyclerView recyclerView=findViewById(R.id.recyclerViewST);
+        databaseO= FirebaseDatabase.getInstance().getReference("OWNERS");
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+
+
+        listO = new ArrayList<>();
+        adapterODB = new AdapterODB(this,listO);
+        recyclerView.setAdapter(adapterODB);
+
+
+
+
+        databaseO.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     OwnersRDB ownersRDB = dataSnapshot.getValue(OwnersRDB.class);
-                    list.add(ownersRDB);
+                    listO.add(ownersRDB);
                 }
                 adapterODB.notifyDataSetChanged();
             }
