@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TenantFinder">
         <activity
-            android:name=".Register"
+            android:name=".Registration"
             android:exported="false" />
         <activity
             android:name=".ShowProperties"

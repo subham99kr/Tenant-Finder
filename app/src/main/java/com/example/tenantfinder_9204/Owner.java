@@ -18,7 +18,6 @@ public class Owner extends AppCompatActivity {
         startActivity(intent);}
     public void addProperty(View view){
         Intent intent = new Intent(this, InputPropertyDetails.class);
-        startActivity(intent);
-    }
+        startActivity(intent); }
 
 }

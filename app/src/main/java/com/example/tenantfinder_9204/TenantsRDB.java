@@ -1,7 +1,7 @@
 package com.example.tenantfinder_9204;
 
 public class TenantsRDB {
-    String name,phone,details , imageUrl;
+    String name,phone,details, imageUrl;
 
     public String getName() {
         return name;

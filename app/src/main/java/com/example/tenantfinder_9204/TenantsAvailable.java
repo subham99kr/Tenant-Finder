@@ -17,31 +17,28 @@ import java.util.ArrayList;
 
 public class TenantsAvailable extends AppCompatActivity {
 
-   RecyclerView recyclerView;
-   DatabaseReference database;
-   AdapterTDB adapterTDB;
-   ArrayList<TenantsRDB> list;
+    RecyclerView recyclerView;
+    DatabaseReference database;
+    AdapterTDB adapterTDB;
+    ArrayList<TenantsRDB> list;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tenants_availaible);
+        setContentView(R.layout.activity_tenants_show);
 
 
-
-        recyclerView = findViewById(R.id.recyclerViewT);
         database= FirebaseDatabase.getInstance().getReference("TENANTS");
+        recyclerView = findViewById(R.id.recyclerViewST);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
         adapterTDB = new AdapterTDB(this,list);
         recyclerView.setAdapter(adapterTDB);
-
-
-
 
         database.addValueEventListener(new ValueEventListener() {
             @SuppressLint("NotifyDataSetChanged")
