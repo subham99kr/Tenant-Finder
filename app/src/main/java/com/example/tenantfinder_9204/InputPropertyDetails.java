@@ -6,9 +6,9 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,7 +49,12 @@ public class InputPropertyDetails extends AppCompatActivity {
 
         imgProfile.setOnClickListener(view -> mGetContent.launch("image/*"));
 
-        btnInsertData.setOnClickListener (view -> insertOwnerData());
+        btnInsertData.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputPropertyDetails.this.insertOwnerData();
+            }
+        });
     }
 
     private void insertOwnerData(){
