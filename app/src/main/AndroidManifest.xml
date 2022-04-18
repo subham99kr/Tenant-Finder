@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TenantFinder">
         <activity
-            android:name=".Registration"
+            android:name=".Register"
             android:exported="false" />
         <activity
             android:name=".ShowProperties"
@@ -38,15 +38,18 @@
         <activity
             android:name=".You_Are"
             android:exported="false" />
+
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

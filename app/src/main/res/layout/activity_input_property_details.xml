@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewOI"
+        app:layout_constraintTop_toBottomOf="@+id/imgProfileO"
         app:layout_constraintVertical_bias="0.062"
         tools:ignore="TextContrastCheck" />
 
@@ -74,19 +74,39 @@
         app:layout_constraintTop_toBottomOf="@+id/ettPhone"
         tools:ignore="TextContrastCheck" />
 
+    <EditText
+        android:id="@+id/eMailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints="Address"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="@color/white"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="20dp"
+        android:ems="10"
+        android:hint="@string/authentication_email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="@+id/ettDetails"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ettDetails"
+        app:layout_constraintTop_toBottomOf="@+id/ettDetails"
+        tools:ignore="TextContrastCheck" />
+
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:background="@color/purple_700"
         android:text="@string/save"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ettDetails"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/ettDetails"
-        app:layout_constraintTop_toBottomOf="@+id/ettDetails"
-        app:layout_constraintVertical_bias="0.273" />
+        app:layout_constraintEnd_toEndOf="@+id/eMailAddress"
+        app:layout_constraintStart_toStartOf="@+id/eMailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/eMailAddress" />
 
     <EditText
         android:id="@+id/ettDetails"
@@ -108,14 +128,29 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageView
-        android:id="@+id/imageViewOI"
+        android:id="@+id/imgProfileO"
         android:layout_width="120dp"
         android:layout_height="130dp"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_baseline_person"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,ImageContrastCheck"
-        android:src="@drawable/ic_baseline_person" />
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:text="@string/incase_if_you_want_to_update_your_data_then_enter_new_data_with_same_authentication_email"
+        android:textColor="#F8F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/eMailAddress"
+        app:layout_constraintStart_toStartOf="@+id/eMailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

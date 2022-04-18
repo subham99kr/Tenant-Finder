@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,7 +11,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import java.util.Objects;
 
-public class Registration extends AppCompatActivity {
+public class Register extends AppCompatActivity {
 
    private TextInputEditText etRegEmail;
    private TextInputEditText etRegPassword;
@@ -33,12 +32,8 @@ public class Registration extends AppCompatActivity {
 
         btnRegister.setOnClickListener(view -> createUser());
 
-
+        tvLoginHere.setOnClickListener(view -> startActivity(new Intent(Register.this, LoginActivity.class)));
     }
-
-    public void startRegister(View view){
-        Intent intent = new Intent(this, Registration.class);
-        startActivity(intent);}
 
     private void createUser(){
         String email = Objects.requireNonNull(etRegEmail.getText()).toString();
@@ -53,10 +48,10 @@ public class Registration extends AppCompatActivity {
         }else{
             mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
-                    Toast.makeText(Registration.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Registration.this, LoginActivity.class));
+                    Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Register.this, LoginActivity.class));
                 }else{
-                    Toast.makeText(Registration.this, "Registration Error: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "Register Error: " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

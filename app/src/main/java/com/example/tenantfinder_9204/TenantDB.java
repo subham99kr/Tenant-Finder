@@ -4,15 +4,19 @@ public class TenantDB {
     String name;
     String phone;
     String details;
+    String email;
     String imageUrl;
 
 
 
-    public TenantDB(String name, String phone, String details, String imageUrl) {
+
+    public TenantDB(String name, String phone, String details,String email, String imageUrl) {
         this.name = name;
         this.phone = phone;
         this.details = details;
+        this.email=email;
         this.imageUrl = imageUrl;
+
     }
 
     public String getName() {
@@ -37,6 +41,14 @@ public class TenantDB {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getImageUrl() {

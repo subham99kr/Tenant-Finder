@@ -16,7 +16,7 @@
         android:layout_marginEnd="50dp"
         android:background="#673AB7"
         android:onClick="searchproperty"
-        android:text="@string/search"
+        android:text="@string/search_properties"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

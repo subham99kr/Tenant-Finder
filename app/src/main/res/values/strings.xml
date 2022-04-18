@@ -39,4 +39,7 @@
     <string name="upload">Upload</string>
     <string name="todo">TODO</string>
     <string name="open_gallery">Open Gallery</string>
+    <string name="authentication_email">Authentication email</string>
+    <string name="search_properties">Search Properties</string>
+    <string name="incase_if_you_want_to_update_your_data_then_enter_new_data_with_same_authentication_email">Incase if you want to update your data then enter new data with same Authentication Email</string>
 </resources>
