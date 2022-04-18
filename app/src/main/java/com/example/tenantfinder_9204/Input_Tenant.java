@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -35,7 +37,9 @@ public class Input_Tenant extends AppCompatActivity {
         setContentView(R.layout.activity_input_tenant);
         Button btnInsertData = findViewById(R.id.btnInsertData);
 
+
         imgProfile=findViewById(R.id.imgProfile);
+
 
         ActivityResultLauncher<String>  mGetContent;
         mGetContent=registerForActivityResult(new ActivityResultContracts.GetContent(), result -> {
@@ -56,13 +60,12 @@ public class Input_Tenant extends AppCompatActivity {
         details= findViewById(R.id.etDetails);
         email=findViewById(R.id.eMailAddress);
 
-
         ProgressDialog dialog=new ProgressDialog(this);
-        dialog.setTitle("File Uploader");
+        dialog.setTitle("Wait....");
         dialog.show();
 
         FirebaseStorage storage=FirebaseStorage.getInstance();
-        StorageReference uploader = storage.getReference("image1"+ new Random().nextInt(1000));
+        StorageReference uploader = storage.getReference("image1"+ new Random().nextInt(100));
         uploader.putFile(uri).addOnSuccessListener(taskSnapshot -> {
 
 
@@ -70,7 +73,7 @@ public class Input_Tenant extends AppCompatActivity {
                 FirebaseDatabase db = FirebaseDatabase.getInstance();
                 DatabaseReference root = db.getReference("TENANTS");
 
-                TenantDB tenantDB = new TenantDB(email.getText().toString(),name.getText().toString(), phone.getText().toString(), details.getText().toString(),  uri.toString());
+                TenantDB tenantDB = new TenantDB(name.getText().toString(), phone.getText().toString(), details.getText().toString(), email.getText().toString(), uri.toString());
                 String uUploadID= email.getText().toString().replaceAll("[-+.^:,@]","1");
                 uUploadID=uUploadID.toLowerCase();
                 root.child(uUploadID).setValue(tenantDB);
@@ -87,7 +90,7 @@ public class Input_Tenant extends AppCompatActivity {
 
             });
         }).addOnProgressListener((OnProgressListener<UploadTask.TaskSnapshot>) snapshot -> {
-                   float percent = ((100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount());
+                    float percent = ((100*snapshot.getBytesTransferred())/snapshot.getTotalByteCount());
                     dialog.setMessage("Uploaded : "+ (int)percent + "%");
                 });
 
